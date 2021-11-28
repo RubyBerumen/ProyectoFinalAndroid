@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">ProyectoFinalAndroid</string>
+
+    <string name="cajaUsuario">Usuario</string>
+    <string name="cajaContraseña">Contraseña</string>
+    <string name="btnAcceder">Acceder</string>
+
+    <string name="btnAltas">Altas</string>
+    <string name="btnBajas">BAjas</string>
+    <string name="btnCambios">Cambios</string>
+    <string name="btnConsultas">Consultas</string>
+    <string name="btnSalirMenu">Salir</string>
+
+    <string name="txtAltas">Altas Proyecto</string>
+    <string name="cajaNombre">Nombre</string>
+    <string name="cajaNumero">Número</string>
+    <string name="cajaUbicacion">Ubicación</string>
+    <string name="cajaNumeroDepartamento">Número de departamento</string>
+    <string name="btnAgregar">Agregar</string>
+
+    <string name="txtBajas">Bajas Proyecto</string>
+    <string name="btnEliminar">Eliminar</string>
+
+    <string name="txtCambios">Cambios Proyecto</string>
+    <string name="btnModificar">Modificar</string>
+
+    <string name="txtConsultas">Consultas Proyecto</string>
+    <string name="btnBuscar">Buscar</string>
+
+
+</resources>
