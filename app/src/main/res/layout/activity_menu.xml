@@ -13,6 +13,7 @@
         android:layout_marginStart="76dp"
         android:layout_marginTop="136dp"
         android:enabled="false"
+        android:onClick="abrirActivities"
         android:text="@string/btnAltas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,6 +26,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="136dp"
         android:enabled="false"
+        android:onClick="abrirActivities"
         android:text="@string/btnBajas"
         app:layout_constraintStart_toEndOf="@+id/btn_altas"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,6 +39,7 @@
         android:layout_marginStart="76dp"
         android:layout_marginTop="64dp"
         android:enabled="false"
+        android:onClick="abrirActivities"
         android:text="@string/btnCambios"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_altas" />
@@ -49,6 +52,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="64dp"
         android:enabled="false"
+        android:onClick="abrirActivities"
         android:text="@string/btnConsultas"
         app:layout_constraintStart_toEndOf="@+id/btn_cambios"
         app:layout_constraintTop_toBottomOf="@+id/btn_bajas" />
