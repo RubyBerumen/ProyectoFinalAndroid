@@ -19,12 +19,24 @@
     <string name="btnAgregar">Agregar</string>
 
     <string name="txtBajas">Bajas Proyecto</string>
+    <string name="cajaNombre1">Nombre</string>
+    <string name="cajaNumero1">Número</string>
+    <string name="cajaUbicacion1">Ubicación</string>
+    <string name="cajaNumeroDepartamento1">Número de departamento</string>
     <string name="btnEliminar">Eliminar</string>
 
     <string name="txtCambios">Cambios Proyecto</string>
+    <string name="cajaNombre3">Nombre</string>
+    <string name="cajaNumero3">Número</string>
+    <string name="cajaUbicacion3">Ubicación</string>
+    <string name="cajaNumeroDepartamento3">Número de departamento</string>
     <string name="btnModificar">Modificar</string>
 
     <string name="txtConsultas">Consultas Proyecto</string>
+    <string name="cajaNombre4">Nombre</string>
+    <string name="cajaNumero4">Número</string>
+    <string name="cajaUbicacion4">Ubicación</string>
+    <string name="cajaNumeroDepartamento4">Número de departamento</string>
     <string name="btnBuscar">Buscar</string>
 
 

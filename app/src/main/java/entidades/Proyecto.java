@@ -41,6 +41,13 @@ public class Proyecto {
         this.numProyecto = numProyecto;
     }
 
+    public Proyecto(@NonNull String nombreProyecto, int numProyecto, @NonNull String ubicaciónProyecto, byte numDptoProyecto) {
+        this.nombreProyecto = nombreProyecto;
+        this.numProyecto = numProyecto;
+        this.ubicaciónProyecto = ubicaciónProyecto;
+        this.numDptoProyecto = numDptoProyecto;
+    }
+
     @NonNull
     public String getUbicaciónProyecto() {
         return ubicaciónProyecto;

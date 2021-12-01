@@ -18,15 +18,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txt_Nombre4"
-        android:layout_width="238dp"
-        android:layout_height="50dp"
+        android:id="@+id/txt_Nombre2"
+        android:layout_width="230dp"
+        android:layout_height="55dp"
         android:layout_marginStart="72dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="53dp"
         android:ems="10"
         android:hint="@string/cajaNombre"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -35,47 +34,44 @@
         android:layout_width="234dp"
         android:layout_height="61dp"
         android:layout_marginStart="72dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="26dp"
         android:ems="10"
-        android:hint="@string/cajaNumero"
+        android:hint="@string/cajaNumero1"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Nombre4" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_Nombre2" />
 
     <EditText
-        android:id="@+id/txt_Ubicacion4"
-        android:layout_width="236dp"
-        android:layout_height="47dp"
+        android:id="@+id/txt_Ubicacion2"
+        android:layout_width="232dp"
+        android:layout_height="51dp"
         android:layout_marginStart="72dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="30dp"
         android:ems="10"
         android:hint="@string/cajaUbicacion"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Numero2"
-        tools:ignore="TouchTargetSizeCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_Numero2" />
 
     <EditText
         android:id="@+id/txt_NumeroDpto2"
         android:layout_width="238dp"
         android:layout_height="55dp"
         android:layout_marginStart="72dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="39dp"
         android:ems="10"
-        android:hint="@string/cajaNumeroDepartamento"
+        android:hint="@string/cajaNumeroDepartamento1"
         android:inputType="number"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Ubicacion4" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_Ubicacion2" />
 
     <Button
-        android:id="@+id/btn_buscar"
-        android:layout_width="158dp"
-        android:layout_height="48dp"
-        android:layout_gravity="start"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="37dp"
-        android:enabled="false"
+        android:id="@+id/btn_eliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="35dp"
         android:text="@string/btnEliminar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_NumeroDpto2" />
