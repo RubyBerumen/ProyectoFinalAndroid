@@ -7,11 +7,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import baseDeDatos.EmpresaBD;
 import entidades.Proyecto;
 
-public class ActivityAltas extends Activity {
+public class ActivityAltas extends AppCompatActivity {
     EditText nombre,numero,ubicacion,numDepartamento;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
@@ -82,5 +83,8 @@ public class ActivityAltas extends Activity {
         numDepartamento.setText("");
     }
 
+    public void borrar(View v){
+        limpiarCajas();
+    }
 
 }
