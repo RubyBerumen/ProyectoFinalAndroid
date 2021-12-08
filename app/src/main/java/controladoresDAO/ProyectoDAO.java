@@ -27,8 +27,8 @@ public interface ProyectoDAO {
     @Query("SELECT * FROM Proyecto")
     public List<Proyecto> obtenerTodos();
 
-    @Query("SELECT * FROM Proyecto WHERE nombre LIKE :n")
-    public List<Proyecto> buscarpNombre (String n);
+    @Query("SELECT * FROM Proyecto WHERE numProyecto LIKE :n")
+    public List<Proyecto> buscarNumLista (String n);
 
     @Query("SELECT * FROM Proyecto WHERE numProyecto = :nump")
     public Proyecto buscarPorNumP (int nump);
