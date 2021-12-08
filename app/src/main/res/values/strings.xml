@@ -34,6 +34,8 @@
     <string name="cajaUbicacion3">Ubicación</string>
     <string name="cajaNumeroDepartamento3">Número de departamento</string>
     <string name="btnModificar">Modificar</string>
+    <string name="btnBuscar3">Buscar</string>
+    <string name="btnBorrar3">Borrar</string>
 
     <string name="txtConsultas">Consultas Proyecto</string>
     <string name="cajaNombre4">Nombre</string>
