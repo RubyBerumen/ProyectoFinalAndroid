@@ -22,11 +22,11 @@ public class ActivityMenu extends Activity {
             case R.id.btn_bajas:
                 i=new Intent(this,ActivityBajas.class);
                 break;
-            case R.id.btn_cambios:
-                i=new Intent(this,ActivityCambios.class);
-                break;
             case R.id.btn_consultas:
                 i=new Intent(this,ActivityConsultas.class);
+                break;
+            case R.id.btn_cambios:
+                i=new Intent(this,ActivityCambios.class);
                 break;
         }
         startActivity(i);

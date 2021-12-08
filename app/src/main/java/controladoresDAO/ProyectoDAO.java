@@ -30,7 +30,7 @@ public interface ProyectoDAO {
     @Query("SELECT * FROM Proyecto WHERE nombre LIKE :n")
     public List<Proyecto> buscarpNombre (String n);
 
-    @Query("SELECT * FROM Proyecto WHERE numProyecto LIKE :nump")
-    public List<Proyecto> buscarPorNumP (int nump);
+    @Query("SELECT * FROM Proyecto WHERE numProyecto = :nump")
+    public Proyecto buscarPorNumP (int nump);
 
 }

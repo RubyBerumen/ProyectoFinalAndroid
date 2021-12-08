@@ -5,6 +5,7 @@
     <string name="cajaContraseña">Contraseña</string>
     <string name="btnAcceder">Acceder</string>
 
+    <string name="txtSeleciona">Selecciona una opción</string>
     <string name="btnAltas">Altas</string>
     <string name="btnBajas">BAjas</string>
     <string name="btnCambios">Cambios</string>

@@ -27,9 +27,9 @@ public class ActivityAltas extends AppCompatActivity {
     public void agregarProyecto(View v){
         if(verificarCajasVacias()==false){
             String nom = nombre.getText().toString();
-            int num = Integer.parseInt(String.valueOf(numero.getText()));
+            int num = Integer.parseInt(numero.getText().toString());
             String ubi = ubicacion.getText().toString();
-            byte numDpto = Byte.parseByte(String.valueOf(numDepartamento.getText()));
+            byte numDpto = Byte.parseByte(numDepartamento.getText().toString());
             Proyecto p = new Proyecto(nom,num,ubi,numDpto);
 
 

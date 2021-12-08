@@ -6,21 +6,23 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import baseDeDatos.EmpresaBD;
 import entidades.Proyecto;
 
-public class ActivityCambios extends Activity {
+public class ActivityCambios extends AppCompatActivity {
 
     EditText nombre,numero,ubicacion,numDepartamento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bajas);
-        nombre=findViewById(R.id.txt_Nombre2);
-        numero=findViewById(R.id.txt_Numero2);
-        ubicacion=findViewById(R.id.txt_Ubicacion2);
-        numDepartamento=findViewById(R.id.txt_NumeroDpto2);
+        setContentView(R.layout.activity_cambios);
+        nombre=findViewById(R.id.txt_Nombre3);
+        numero=findViewById(R.id.txt_Numero3);
+        ubicacion=findViewById(R.id.txt_Ubicacion3);
+        numDepartamento=findViewById(R.id.txt_NumeroDpto3);
     }
 
     public void modificarProyecto(View v){
@@ -29,21 +31,28 @@ public class ActivityCambios extends Activity {
             public void run() {
                 Proyecto p = null;
                 EmpresaBD conexion = EmpresaBD.gettAppDatabase(getBaseContext());
-                int num = Integer.parseInt(String.valueOf(numero.getText()));
+                int num = Integer.parseInt(""+numero.getText().toString());
                 p = (Proyecto) conexion.pDAO().buscarPorNumP(num);
                 if (p!=null){
-                    String nom = nombre.getText().toString();
-                    int no = Integer.parseInt(numero.getText().toString());
-                    String ubi = ubicacion.getText().toString();
-                    byte numDpto = Byte.parseByte(numDepartamento.getText().toString());
-                    conexion.pDAO().modificarProyecto(no,nom,ubi,numDpto);
+                   try {
+                       String nom = nombre.getText().toString();
+                       int no = Integer.parseInt(numero.getText().toString());
+                       String ubi = ubicacion.getText().toString();
+                       byte numDpto = Byte.parseByte(numDepartamento.getText().toString());
+                       conexion.pDAO().modificarProyecto(no,nom,ubi,numDpto);
 
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getBaseContext(), "Se modificó correctamente", Toast.LENGTH_LONG);
-                        }
-                    });
+                       runOnUiThread(new Runnable() {
+                           @Override
+                           public void run() {
+                               Toast.makeText(getBaseContext(), "Se modificó correctamente", Toast.LENGTH_LONG);
+                           }
+                       });
+
+                   }catch (Exception e){
+
+                   }
+
+
                 }else{
                     runOnUiThread(new Runnable() {
                         @Override
@@ -59,19 +68,23 @@ public class ActivityCambios extends Activity {
 
 
     public void buscar(View v){
-        if(numero.getText().toString().isEmpty()==false){
+        if(!numero.getText().toString().isEmpty()){
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     Proyecto p = null;
                     EmpresaBD conexion = EmpresaBD.gettAppDatabase(getBaseContext());
-                    int num = Integer.parseInt(String.valueOf(numero.getText()));
+                    int num = Integer.parseInt(""+numero.getText().toString());
                     p = (Proyecto) conexion.pDAO().buscarPorNumP(num);
                     if (p!=null){
-                        nombre.setText(p.getNombreProyecto());
-                        numero.setText(p.getNumProyecto());
-                        ubicacion.setText(p.getUbicaciónProyecto());
-                        numDepartamento.setText(p.getNumDptoProyecto());
+                        try {
+                            nombre.setText(p.getNombreProyecto());
+                            numero.setText(""+p.getNumProyecto());
+                            ubicacion.setText(p.getUbicaciónProyecto());
+                            numDepartamento.setText(""+p.getNumDptoProyecto());
+                        }catch (Exception e){
+
+                        }
                     }else{
                         runOnUiThread(new Runnable() {
                             @Override

@@ -63,12 +63,16 @@ public class ActivityBajas extends AppCompatActivity {
                     Proyecto p = null;
                     EmpresaBD conexion = EmpresaBD.gettAppDatabase(getBaseContext());
                     int num = Integer.parseInt(String.valueOf(numero.getText()));
-                    p = (Proyecto) conexion.pDAO().buscarPorNumP(num);
+                    p = conexion.pDAO().buscarPorNumP(num);
                     if (p!=null){
-                        nombre.setText(p.getNombreProyecto());
-                        numero.setText(p.getNumProyecto());
-                        ubicacion.setText(p.getUbicaciónProyecto());
-                        numDepartamento.setText(p.getNumDptoProyecto());
+                        try {
+                            nombre.setText(p.getNombreProyecto());
+                            numero.setText(""+p.getNumProyecto());
+                            ubicacion.setText(p.getUbicaciónProyecto());
+                            numDepartamento.setText(""+p.getNumDptoProyecto());
+                        }catch (Exception e){
+
+                        }
                     }else{
                         runOnUiThread(new Runnable() {
                             @Override
