@@ -6,13 +6,16 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import controladoresDAO.ProyectoDAO;
+import controladoresDAO.UsuarioDAO;
 import entidades.Proyecto;
+import entidades.Usuario;
 
-@Database(entities = {Proyecto.class},version = 1,exportSchema = false)
+@Database(entities = {Proyecto.class, Usuario.class},version = 1,exportSchema = false)
 
 public abstract class EmpresaBD extends RoomDatabase {
 
     public abstract ProyectoDAO pDAO();
+    public abstract UsuarioDAO uDAO();
 
     private static EmpresaBD INSTANCE;
 

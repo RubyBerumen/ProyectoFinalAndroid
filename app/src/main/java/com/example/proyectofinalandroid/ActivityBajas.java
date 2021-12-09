@@ -60,28 +60,32 @@ public class ActivityBajas extends AppCompatActivity {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    Proyecto p = null;
-                    EmpresaBD conexion = EmpresaBD.gettAppDatabase(getBaseContext());
-                    int num = Integer.parseInt(String.valueOf(numero.getText()));
-                    p = conexion.pDAO().buscarPorNumP(num);
-                    if (p!=null){
-                        try {
-                            nombre.setText(p.getNombreProyecto());
-                            numero.setText(""+p.getNumProyecto());
-                            ubicacion.setText(p.getUbicaciónProyecto());
-                            numDepartamento.setText(""+p.getNumDptoProyecto());
-                        }catch (Exception e){
+                   try {
+                       Proyecto p = null;
+                       EmpresaBD conexion = EmpresaBD.gettAppDatabase(getBaseContext());
+                       int num = Integer.parseInt(String.valueOf(numero.getText()));
+                       p = conexion.pDAO().buscarPorNumP(num);
+                       if (p!=null){
+                           try {
+                               nombre.setText(p.getNombreProyecto());
+                               numero.setText(""+p.getNumProyecto());
+                               ubicacion.setText(p.getUbicaciónProyecto());
+                               numDepartamento.setText(""+p.getNumDptoProyecto());
+                           }catch (Exception e){
 
-                        }
-                    }else{
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(getBaseContext(), "Los datos ingresados no existen", Toast.LENGTH_LONG).show();
-                                limpiarCajas();
-                            }
-                        });
-                    }
+                           }
+                       }else{
+                           runOnUiThread(new Runnable() {
+                               @Override
+                               public void run() {
+                                   Toast.makeText(getBaseContext(), "Los datos ingresados no existen", Toast.LENGTH_LONG).show();
+                                   limpiarCajas();
+                               }
+                           });
+                       }
+                   }catch (Exception e){
+
+                   }
 
                 }
             }).start();

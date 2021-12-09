@@ -64,4 +64,14 @@ public class Proyecto {
     public void setNumDptoProyecto(byte numDptoProyecto) {
         this.numDptoProyecto = numDptoProyecto;
     }
+
+    @Override
+    public String toString() {
+        return "Proyecto{" +
+                "nombreProyecto='" + nombreProyecto + '\'' +
+                ", numProyecto=" + numProyecto +
+                ", ubicaciónProyecto='" + ubicaciónProyecto + '\'' +
+                ", numDptoProyecto=" + numDptoProyecto +
+                '}';
+    }
 }

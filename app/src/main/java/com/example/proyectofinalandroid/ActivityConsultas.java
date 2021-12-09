@@ -70,8 +70,13 @@ public class ActivityConsultas extends Activity {
                             for(int i=0; i<p[0];i++){
                                 datos[0] = datos[0]+proyectoList.get(i)+"/";
                             }
-                            adapter = new AdaptadorRegistros(datos[0].split("/"));
-                            recycelerV.setAdapter(adapter);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    adapter = new AdaptadorRegistros(datos[0].split("/"));
+                                    recycelerV.setAdapter(adapter);
+                                }
+                            });
                         }
                     }).start();
                 }else{
@@ -84,8 +89,13 @@ public class ActivityConsultas extends Activity {
                             for (int i = 0; i < p[0]; i++) {
                                 datos[0] = datos[0] + proyectoList.get(i)+"/";
                             }
-                            adapter = new AdaptadorRegistros(datos[0].split("/"));
-                            recycelerV.setAdapter(adapter);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    adapter = new AdaptadorRegistros(datos[0].split("/"));
+                                    recycelerV.setAdapter(adapter);
+                                }
+                            });
                         }
                     }).start();
                 }

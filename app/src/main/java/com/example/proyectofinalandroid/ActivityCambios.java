@@ -44,7 +44,7 @@ public class ActivityCambios extends AppCompatActivity {
                        runOnUiThread(new Runnable() {
                            @Override
                            public void run() {
-                               Toast.makeText(getBaseContext(), "Se modificó correctamente", Toast.LENGTH_LONG);
+                               Toast.makeText(getBaseContext(), "Se modificó correctamente", Toast.LENGTH_LONG).show();
                            }
                        });
 
