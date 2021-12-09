@@ -25,13 +25,12 @@ public class ActivityAltas extends AppCompatActivity {
     }
 
     public void agregarProyecto(View v){
-        if(verificarCajasVacias()==false){
+        if(verificarCajasVacias()){
             String nom = nombre.getText().toString();
             int num = Integer.parseInt(numero.getText().toString());
             String ubi = ubicacion.getText().toString();
             byte numDpto = Byte.parseByte(numDepartamento.getText().toString());
             Proyecto p = new Proyecto(nom,num,ubi,numDpto);
-
 
 
             new Thread(new Runnable() {
@@ -69,10 +68,11 @@ public class ActivityAltas extends AppCompatActivity {
 
 
     public boolean verificarCajasVacias(){
-        if(nombre.getText().equals("")||numero.getText().equals("")||ubicacion.getText().equals("")||numDepartamento.getText().equals("")){
-            return true;
-        }else{
+        if(nombre.getText().toString().isEmpty()||numero.getText().toString().isEmpty()
+                ||ubicacion.getText().toString().isEmpty()||numDepartamento.getText().toString().isEmpty()){
             return false;
+        }else{
+            return true;
         }
     }
 

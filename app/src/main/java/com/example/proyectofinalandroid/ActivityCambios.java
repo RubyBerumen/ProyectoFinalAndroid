@@ -31,26 +31,40 @@ public class ActivityCambios extends AppCompatActivity {
             public void run() {
                 Proyecto p = null;
                 EmpresaBD conexion = EmpresaBD.gettAppDatabase(getBaseContext());
-                int num = Integer.parseInt(""+numero.getText().toString());
-                p = (Proyecto) conexion.pDAO().buscarPorNumP(num);
+                if(!numero.getText().toString().isEmpty()){
+                    int num = Integer.parseInt(""+numero.getText().toString());
+                    p = (Proyecto) conexion.pDAO().buscarPorNumP(num);
+                }
+
                 if (p!=null){
-                   try {
-                       String nom = nombre.getText().toString();
-                       int no = Integer.parseInt(numero.getText().toString());
-                       String ubi = ubicacion.getText().toString();
-                       byte numDpto = Byte.parseByte(numDepartamento.getText().toString());
-                       conexion.pDAO().modificarProyecto(no,nom,ubi,numDpto);
+                    if(!nombre.getText().toString().isEmpty()&&!numero.getText().toString().isEmpty()&&
+                        !ubicacion.getText().toString().isEmpty()&&!numDepartamento.getText().toString().isEmpty()){
 
-                       runOnUiThread(new Runnable() {
-                           @Override
-                           public void run() {
-                               Toast.makeText(getBaseContext(), "Se modificó correctamente", Toast.LENGTH_LONG).show();
-                           }
-                       });
+                        try {
+                            String nom = nombre.getText().toString();
+                            int no = Integer.parseInt(numero.getText().toString());
+                            String ubi = ubicacion.getText().toString();
+                            byte numDpto = Byte.parseByte(numDepartamento.getText().toString());
+                            conexion.pDAO().modificarProyecto(no,nom,ubi,numDpto);
 
-                   }catch (Exception e){
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(getBaseContext(), "Se modificó correctamente", Toast.LENGTH_LONG).show();
+                                }
+                            });
 
-                   }
+                        }catch (Exception e){
+
+                        }
+                    }else{
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getBaseContext(), "Debes completar todos los campos", Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
 
 
                 }else{

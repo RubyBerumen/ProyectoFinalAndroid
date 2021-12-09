@@ -26,7 +26,7 @@ public class ActivityBajas extends AppCompatActivity {
     }
 
     public void eliminarProyecto(View v){
-        if (verificarCajasVacias()==false){
+        if (verificarCajasVacias()){
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -52,6 +52,13 @@ public class ActivityBajas extends AppCompatActivity {
                     }
                 }
             }).start();
+        }else{
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(getBaseContext(), "Debes completar todos los campos", Toast.LENGTH_LONG).show();
+                }
+            });
         }
     }//eliminar
 
@@ -94,10 +101,11 @@ public class ActivityBajas extends AppCompatActivity {
 
 
     public boolean verificarCajasVacias(){
-        if(nombre.getText().equals("")||numero.getText().equals("")){
-            return true;
-        }else{
+        if(nombre.getText().toString().isEmpty()||numero.getText().toString().isEmpty()
+                ||ubicacion.getText().toString().isEmpty()||numDepartamento.getText().toString().isEmpty()){
             return false;
+        }else{
+            return true;
         }
     }
 
