@@ -8,8 +8,8 @@
 
     <EditText
         android:id="@+id/txt_Contraseña"
-        android:layout_width="242dp"
-        android:layout_height="50dp"
+        android:layout_width="211dp"
+        android:layout_height="47dp"
         android:layout_marginStart="72dp"
         android:layout_marginTop="60dp"
         android:ems="10"
@@ -21,8 +21,8 @@
 
     <EditText
         android:id="@+id/txt_Usuario"
-        android:layout_width="245dp"
-        android:layout_height="50dp"
+        android:layout_width="213dp"
+        android:layout_height="51dp"
         android:layout_marginStart="72dp"
         android:layout_marginTop="212dp"
         android:ems="10"
@@ -36,8 +36,8 @@
         android:id="@+id/btn_Acceder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="80dp"
         android:onClick="ingresar"
         android:text="@string/btnAcceder"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
+        android:layout_marginStart="108dp"
         android:layout_marginTop="44dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
