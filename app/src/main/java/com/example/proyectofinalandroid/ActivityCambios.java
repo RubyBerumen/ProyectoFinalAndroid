@@ -2,11 +2,18 @@ package com.example.proyectofinalandroid;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 import baseDeDatos.EmpresaBD;
 import entidades.Proyecto;
@@ -14,6 +21,10 @@ import entidades.Proyecto;
 public class ActivityCambios extends AppCompatActivity {
 
     EditText nombre,numero,ubicacion,numDepartamento;
+    RecyclerView recycelerV;
+    RecyclerView.Adapter adapter;
+    RecyclerView.LayoutManager layoutM;
+    List<Proyecto> proyectoList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -23,7 +34,146 @@ public class ActivityCambios extends AppCompatActivity {
         numero=findViewById(R.id.txt_Numero3);
         ubicacion=findViewById(R.id.txt_Ubicacion3);
         numDepartamento=findViewById(R.id.txt_NumeroDpto3);
-    }
+
+        recycelerV=findViewById(R.id.txt_RecyclerView);
+        recycelerV.setHasFixedSize(true);
+
+        layoutM = new LinearLayoutManager(this);
+        recycelerV.setLayoutManager(layoutM);
+
+
+
+        numero.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String[] datos = {""};
+                int[] p = new int[1];
+
+                if(numero.getText().toString().isEmpty()){
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            EmpresaBD conexion = EmpresaBD.gettAppDatabase(getBaseContext());
+                            proyectoList = conexion.pDAO().obtenerTodos();
+                            p[0] = proyectoList.size();
+                            for (Proyecto i:proyectoList){
+                                Log.d("proyecto", i.toString());
+                            }
+                            for(int i=0; i<p[0];i++){
+                                datos[0] = datos[0]+proyectoList.get(i)+"/";
+                            }
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    adapter = new AdaptadorRegistros(datos[0].split("/"));
+                                    recycelerV.setAdapter(adapter);
+                                }
+                            });
+                        }
+                    }).start();
+                }else{
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            EmpresaBD conexion = EmpresaBD.gettAppDatabase(getBaseContext());
+                            proyectoList = conexion.pDAO().buscarNumLista("%"+numero.getText().toString()+"%");
+                            p[0] = proyectoList.size();
+                            for (int i = 0; i < p[0]; i++) {
+                                datos[0] = datos[0] + proyectoList.get(i)+"/";
+                            }
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    adapter = new AdaptadorRegistros(datos[0].split("/"));
+                                    recycelerV.setAdapter(adapter);
+                                }
+                            });
+                        }
+                    }).start();
+                }
+
+            }
+        });
+
+
+
+
+        nombre.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String[] datos = {""};
+                int[] p = new int[1];
+
+                if(nombre.getText().toString().isEmpty()){
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            EmpresaBD conexion = EmpresaBD.gettAppDatabase(getBaseContext());
+                            proyectoList = conexion.pDAO().obtenerTodos();
+                            p[0] = proyectoList.size();
+                            for (Proyecto i:proyectoList){
+                                Log.d("proyecto", i.toString());
+                            }
+                            for(int i=0; i<p[0];i++){
+                                datos[0] = datos[0]+proyectoList.get(i)+"/";
+                            }
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    adapter = new AdaptadorRegistros(datos[0].split("/"));
+                                    recycelerV.setAdapter(adapter);
+                                }
+                            });
+                        }
+                    }).start();
+                }else{
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            EmpresaBD conexion = EmpresaBD.gettAppDatabase(getBaseContext());
+                            proyectoList = conexion.pDAO().buscarNombre("%"+nombre.getText().toString()+"%");
+                            p[0] = proyectoList.size();
+                            for (int i = 0; i < p[0]; i++) {
+                                datos[0] = datos[0] + proyectoList.get(i)+"/";
+                            }
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    adapter = new AdaptadorRegistros(datos[0].split("/"));
+                                    recycelerV.setAdapter(adapter);
+                                }
+                            });
+                        }
+                    }).start();
+                }
+
+            }
+        });
+
+
+
+
+    }//onCreate
 
     public void modificarProyecto(View v){
         new Thread(new Runnable() {

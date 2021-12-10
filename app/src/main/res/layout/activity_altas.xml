@@ -19,7 +19,7 @@
 
     <EditText
         android:id="@+id/txt_Numero"
-        android:layout_width="230dp"
+        android:layout_width="238dp"
         android:layout_height="57dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="25dp"
@@ -31,7 +31,7 @@
 
     <EditText
         android:id="@+id/txt_Ubicacion"
-        android:layout_width="236dp"
+        android:layout_width="238dp"
         android:layout_height="47dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="33dp"
@@ -75,7 +75,6 @@
         android:layout_marginTop="36dp"
         android:onClick="agregarProyecto"
         android:text="@string/btnAgregar"
-        android:backgroundTint="#852747"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_NumeroDpto" />
 
@@ -87,7 +86,6 @@
         android:layout_marginTop="36dp"
         android:onClick="borrar"
         android:text="@string/btnBorrar"
-        android:backgroundTint="#852747"
         app:layout_constraintStart_toEndOf="@+id/btn_Agregar"
         app:layout_constraintTop_toBottomOf="@+id/txt_NumeroDpto" />
 

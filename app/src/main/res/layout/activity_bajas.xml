@@ -21,8 +21,8 @@
         android:id="@+id/txt_Nombre2"
         android:layout_width="230dp"
         android:layout_height="55dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="@string/cajaNombre"
         android:inputType="textPersonName"
@@ -31,10 +31,10 @@
 
     <EditText
         android:id="@+id/txt_Numero2"
-        android:layout_width="234dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="26dp"
+        android:layout_width="235dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/cajaNumero1"
         android:inputType="number"
@@ -45,8 +45,8 @@
         android:id="@+id/txt_Ubicacion2"
         android:layout_width="232dp"
         android:layout_height="51dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/cajaUbicacion"
         android:inputType="textPersonName"
@@ -55,10 +55,10 @@
 
     <EditText
         android:id="@+id/txt_NumeroDpto2"
-        android:layout_width="238dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="39dp"
+        android:layout_width="230dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/cajaNumeroDepartamento1"
         android:inputType="number"
@@ -98,5 +98,14 @@
         android:text="@string/btnBorrar1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_eliminar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/txt_RecyclerView1"
+        android:layout_width="345dp"
+        android:layout_height="271dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

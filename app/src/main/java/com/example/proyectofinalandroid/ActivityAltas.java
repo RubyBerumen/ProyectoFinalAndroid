@@ -50,8 +50,8 @@ public class ActivityAltas extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(getBaseContext(),"Los datos ya existen",Toast.LENGTH_LONG).show();
-                                limpiarCajas();
+                                Toast.makeText(getBaseContext(),"Debes agregar un número de proyecto nuevo",Toast.LENGTH_LONG).show();
+                                //limpiarCajas();
                             }
                         });
 
